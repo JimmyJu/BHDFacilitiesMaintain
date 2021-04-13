@@ -1,5 +1,6 @@
 package com.bhd.facilitiesmaintain.viewmodel.request
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.bhd.baselibrary.base.rxjava.BaseObserver
 import com.bhd.baselibrary.base.rxjava.NetScheduler
@@ -31,11 +32,10 @@ class RequestLoginRegisterViewModel : BaseViewModel() {
                 }
 
                 override fun onSuccess(data: ResponseBody?) {
-
                     val a = data!!.string().replace("\\", "")
                     val b = a.substring(1, a.length - 1)
-
-                    loginResult.value = (Gson().fromJson(b, UserInfo::class.java))
+                    Log.e("TAG", "onSuccess: $b")
+//                    loginResult.value = (Gson().fromJson(b, UserInfo::class.java))
                 }
 
 

@@ -23,8 +23,8 @@ class LoginActivity : BaseActivity<LoginRegisterViewModel, ActivityLoginBinding>
         mDatabind.viewmodel = mViewModel
         mDatabind.click = ProxyClick()
 
-        mViewModel.edLoginMobile.set("15770532680")
-        mViewModel.edLoginPassword.set("20010430YY")
+//        mViewModel.edLoginMobile.set("15770532680")
+//        mViewModel.edLoginPassword.set("20010430YY")
 
         requestLoginRegisterViewModel.loginResult.observe(this, Observer {
             dismissLoading()
