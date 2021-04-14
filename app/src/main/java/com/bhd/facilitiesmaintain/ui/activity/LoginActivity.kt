@@ -7,10 +7,12 @@ import androidx.lifecycle.Observer
 import com.bhd.facilitiesmaintain.R
 import com.bhd.facilitiesmaintain.databinding.ActivityLoginBinding
 import com.bhd.facilitiesmaintain.databinding.ActivityMainBinding
+import com.bhd.facilitiesmaintain.ext.hideSoftKeyboard
 import com.bhd.facilitiesmaintain.viewmodel.request.RequestLoginRegisterViewModel
 import com.bhd.facilitiesmaintain.viewmodel.state.LoginRegisterViewModel
 import com.blankj.utilcode.util.ToastUtils
 import kotlinx.android.synthetic.main.activity_login.*
+import me.hgj.jetpackmvvm.util.startActivity
 
 class LoginActivity : BaseActivity<LoginRegisterViewModel, ActivityLoginBinding>() {
 
@@ -29,13 +31,15 @@ class LoginActivity : BaseActivity<LoginRegisterViewModel, ActivityLoginBinding>
         requestLoginRegisterViewModel.loginResult.observe(this, Observer {
             dismissLoading()
             Log.e("TAG", "initView: " + it[0].Email)
-
         })
 
     }
 
     inner class ProxyClick {
         fun loginClick() {
+            val user: String = edLoginMobile.text.toString()
+            val psw: String = edLoginPassword.text.toString()
+            Log.e("TAG", "loginClick: " + "用户名：$user，密码：$psw")
             when {
                 edLoginMobile.text.toString().isEmpty() -> {
                     ToastUtils.showShort("用户名不能为空")
@@ -51,6 +55,11 @@ class LoginActivity : BaseActivity<LoginRegisterViewModel, ActivityLoginBinding>
                     )
                 }
             }
+        }
+
+        fun goRegister() {
+            hideSoftKeyboard(this@LoginActivity)
+            startActivity<RegisterActivity>()
         }
     }
 }

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.bhd.facilitiesmaintain.viewmodel.state.LoginRegisterViewModel" />
+
+        <variable
+            name="click"
+            type="com.bhd.facilitiesmaintain.ui.activity.RegisterActivity.ProxyClick" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <com.tamsiree.rxui.view.RxTitle
+            android:id="@+id/rx_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_55"
+            android:background="@color/colorPrimary"
+            app:title="注册" />
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/register"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="48dp"-->
+        <!--            android:layout_marginTop="30dp"-->
+        <!--            android:layout_marginBottom="12dp"-->
+        <!--            android:layout_gravity="bottom"-->
+        <!--            android:background="@drawable/shape_common_btn"-->
+        <!--            android:gravity="center"-->
+        <!--            android:text="注册"-->
+        <!--            android:onClick="@{()->click.register()}"-->
+        <!--            android:textColor="@color/white"-->
+        <!--            android:textSize="16dp" />-->
+
+    </LinearLayout>
+</layout>

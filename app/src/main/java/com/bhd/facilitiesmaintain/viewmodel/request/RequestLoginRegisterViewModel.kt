@@ -28,7 +28,7 @@ class RequestLoginRegisterViewModel : BaseViewModel() {
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(object : BaseObserver<ResponseBody>() {
                 override fun onFailure(t: ResponseBody?, message: String?) {
-
+                    Log.e("TAG", "onFailure: " + message)
                 }
 
                 override fun onSuccess(data: ResponseBody?) {

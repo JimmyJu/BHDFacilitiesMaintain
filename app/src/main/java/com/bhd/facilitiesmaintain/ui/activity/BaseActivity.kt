@@ -8,6 +8,7 @@ import com.bhd.facilitiesmaintain.event.EventViewModel
 import com.bhd.facilitiesmaintain.event.AppViewModel
 import com.bhd.facilitiesmaintain.ext.dismissLoadingExt
 import com.bhd.facilitiesmaintain.ext.getAppViewModel
+import com.bhd.facilitiesmaintain.ext.hideSoftKeyboard
 import com.bhd.facilitiesmaintain.ext.showLoadingExt
 
 /**
@@ -46,6 +47,11 @@ abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding> : BaseVmDb
      */
     override fun dismissLoading() {
         dismissLoadingExt()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        hideSoftKeyboard(this)
     }
 
     /* */
