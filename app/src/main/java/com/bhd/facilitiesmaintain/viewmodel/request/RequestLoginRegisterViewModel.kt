@@ -35,7 +35,7 @@ class RequestLoginRegisterViewModel : BaseViewModel() {
                     val a = data!!.string().replace("\\", "")
                     val b = a.substring(1, a.length - 1)
                     Log.e("TAG", "onSuccess: $b")
-//                    loginResult.value = (Gson().fromJson(b, UserInfo::class.java))
+                    loginResult.value = (Gson().fromJson(b, UserInfo::class.java))
                 }
 
 

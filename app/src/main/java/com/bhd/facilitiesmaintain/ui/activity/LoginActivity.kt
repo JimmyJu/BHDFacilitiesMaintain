@@ -25,9 +25,6 @@ class LoginActivity : BaseActivity<LoginRegisterViewModel, ActivityLoginBinding>
         mDatabind.viewmodel = mViewModel
         mDatabind.click = ProxyClick()
 
-//        mViewModel.edLoginMobile.set("15770532680")
-//        mViewModel.edLoginPassword.set("20010430YY")
-
         requestLoginRegisterViewModel.loginResult.observe(this, Observer {
             dismissLoading()
             Log.e("TAG", "initView: " + it[0].Email)
@@ -37,16 +34,9 @@ class LoginActivity : BaseActivity<LoginRegisterViewModel, ActivityLoginBinding>
 
     inner class ProxyClick {
         fun loginClick() {
-//            val user: String = edLoginMobile.text.toString()
-//            val psw: String = edLoginPassword.text.toString()
-//            Log.e("TAG", "loginClick: " + "用户名：$user，密码：$psw")
             when {
-                edLoginMobile.text.toString().isEmpty() -> {
-                    ToastUtils.showShort("用户名不能为空")
-                }
-                edLoginPassword.text.toString().isEmpty() -> {
-                    ToastUtils.showShort("密码不能为空")
-                }
+                mViewModel.edLoginMobile.get().isEmpty() -> ToastUtils.showShort("用户名不能为空")
+                mViewModel.edLoginPassword.get().isEmpty() -> ToastUtils.showShort("密码不能为空")
                 else -> {
                     showLoading("请求网络中")
                     requestLoginRegisterViewModel.loginRequest(
