@@ -28,5 +28,40 @@ interface ApiService {
         @Query("Password") Password: String
     ): Observable<ResponseBody>
 
+    /**
+     * 微信号登录
+     */
+    @POST("user/Login?")
+    fun loginWC(
+        @Query("WechatNo") WechatNo: String,
+        @Query("Password") Password: String
+    ): Observable<ResponseBody>
 
+    /**
+     * 获取公司信息
+     */
+    @POST("user/GetCompanyList")
+    fun getCompanyList(): Observable<ResponseBody>
+
+    /**
+     * 取岗位信息
+     */
+    @POST("user/GetPositionList")
+    fun getPositionList(): Observable<ResponseBody>
+
+    /**
+     * 提交注册
+     */
+    @POST("user/Reg?")
+    fun submit(
+        @Query("MobileNo") MobileNo: String,
+        @Query("WechatNo") WechatNo: String,
+        @Query("OpenID") OpenID: String,
+        @Query("Password") Password: String,
+        @Query("RealName") RealName: String,
+        @Query("UserType") UserType: String,
+        @Query("Email") Email: String,
+        @Query("CompanyIDs") CompanyIDs: String,
+        @Query("PositionIDs") PositionIDs: String
+    ): Observable<ResponseBody>
 }

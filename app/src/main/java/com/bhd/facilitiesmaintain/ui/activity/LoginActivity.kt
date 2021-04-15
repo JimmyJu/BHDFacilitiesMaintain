@@ -37,9 +37,9 @@ class LoginActivity : BaseActivity<LoginRegisterViewModel, ActivityLoginBinding>
 
     inner class ProxyClick {
         fun loginClick() {
-            val user: String = edLoginMobile.text.toString()
-            val psw: String = edLoginPassword.text.toString()
-            Log.e("TAG", "loginClick: " + "用户名：$user，密码：$psw")
+//            val user: String = edLoginMobile.text.toString()
+//            val psw: String = edLoginPassword.text.toString()
+//            Log.e("TAG", "loginClick: " + "用户名：$user，密码：$psw")
             when {
                 edLoginMobile.text.toString().isEmpty() -> {
                     ToastUtils.showShort("用户名不能为空")
