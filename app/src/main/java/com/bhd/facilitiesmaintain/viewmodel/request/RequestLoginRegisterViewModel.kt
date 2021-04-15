@@ -11,6 +11,7 @@ import com.google.gson.Gson
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers
 import okhttp3.ResponseBody
+import java.lang.reflect.Type
 
 
 /**
@@ -40,7 +41,18 @@ class RequestLoginRegisterViewModel : BaseViewModel() {
 
 
             })
+    }
 
+    fun <T> fromToJson(json: String, listType: Type) {
+        var gson: Gson? = Gson()
 
     }
+
+
+//    public <T> T fromToJson(String json,Type listType){
+//        Gson gson = new Gson();
+//        T t = null;
+//        t = gson.fromJson(json,listType);
+//        return t;
+//    }
 }
