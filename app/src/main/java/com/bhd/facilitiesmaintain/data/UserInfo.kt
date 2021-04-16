@@ -16,14 +16,14 @@ class UserInfo : ArrayList<UserInfoItem>()
 @SuppressLint("ParcelCreator")
 @Parcelize
 data class UserInfoItem(
-    val CreateTime: String,
-    val Email: String,
-    val ID: String,
-    val LastLoginTime: String,
-    val LastUpdateTime: String,
-    val MobileNo: String,
-    val RealName: String,
-    val Sex: String,
-    val UserType: String,
-    val WechatNo: String
+    var CreateTime: String,
+    var Email: String,
+    var ID: String,
+    var LastLoginTime: String,
+    var LastUpdateTime: String,
+    var MobileNo: String,
+    var RealName: String,
+    var Sex: String,
+    var UserType: String,
+    var WechatNo: String
 ) : Parcelable

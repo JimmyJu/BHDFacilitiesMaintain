@@ -8,6 +8,7 @@ import com.bhd.facilitiesmaintain.R
 import com.bhd.facilitiesmaintain.databinding.ActivityLoginBinding
 import com.bhd.facilitiesmaintain.databinding.ActivityMainBinding
 import com.bhd.facilitiesmaintain.ext.hideSoftKeyboard
+import com.bhd.facilitiesmaintain.ext.showMessage
 import com.bhd.facilitiesmaintain.viewmodel.request.RequestLoginRegisterViewModel
 import com.bhd.facilitiesmaintain.viewmodel.state.LoginRegisterViewModel
 import com.blankj.utilcode.util.ToastUtils
