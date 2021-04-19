@@ -1,5 +1,6 @@
 package com.bhd.facilitiesmaintain.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
@@ -50,7 +51,8 @@ class LoginActivity : BaseActivity<LoginRegisterViewModel, ActivityLoginBinding>
 
         fun goRegister() {
             hideSoftKeyboard(this@LoginActivity)
-            startActivity<RegisterActivity>()
+            startActivity(Intent(this@LoginActivity, RegisterActivity::class.java))
+//            startActivity<RegisterActivity>()
         }
     }
 }

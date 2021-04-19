@@ -14,7 +14,7 @@ class RegisterActivity : BaseActivity<LoginRegisterViewModel, ActivityRegisterBi
     }
 
     override fun initView(savedInstanceState: Bundle?) {
-        rx_title.setOnClickListener(View.OnClickListener { finish() })
+        rx_title.setOnClickListener { finish() }
         mDatabind.viewmodel = mViewModel
         mDatabind.click = ProxyClick()
 
