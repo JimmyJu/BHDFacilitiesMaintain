@@ -4,5 +4,6 @@ import com.bhd.baselibrary.base.viewmodel.BaseViewModel
 import com.bhd.baselibrary.callbak.StringObservableField
 
 class MainViewModel : BaseViewModel() {
-    var prompt_message = StringObservableField()
+    var promptMessage = StringObservableField()
+    var userName = StringObservableField()
 }

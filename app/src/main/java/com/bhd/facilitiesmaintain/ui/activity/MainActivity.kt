@@ -19,5 +19,30 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
         fun signout() {
 
         }
+
+        //信息管理
+        fun inforManage() {
+
+        }
+
+        //设备列表
+        fun deviceList() {
+
+        }
+
+        //工单查询
+        fun workOrderQuery() {
+
+        }
+
+        //报修录入
+        fun repairEntry() {
+
+        }
+
+        //维护保养
+        fun maintenance() {
+
+        }
     }
 }
