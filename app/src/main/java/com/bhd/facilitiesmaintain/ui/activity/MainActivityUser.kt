@@ -9,11 +9,11 @@ import com.bhd.facilitiesmaintain.viewmodel.state.MainViewModel
 class MainActivityUser : BaseActivity<MainViewModel, ActivityMainUserBinding>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main_user)
+        //setContentView(R.layout.activity_main_user)
     }
 
     override fun layoutId(): Int {
-        TODO("Not yet implemented")
+        return R.layout.activity_main_user
     }
 
     override fun initView(savedInstanceState: Bundle?) {

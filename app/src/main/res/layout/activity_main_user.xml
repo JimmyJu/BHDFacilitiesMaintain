@@ -50,7 +50,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="@dimen/dp_15"
-                    android:text="@{viewmodel.userName}"
+                    android:text="@={viewmodel.userName}"
                     android:textColor="#333333"
                     android:textSize="@dimen/sp_20"
                     tools:text="欢迎：李先生" />
@@ -91,36 +91,18 @@
 
                 <Button
                     android:id="@+id/btn_xxgl"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/dp_136"
+                    android:layout_height="@dimen/dp_72"
                     android:background="@mipmap/but_xxgl"
-                    android:onClick="@{()->click.inforManage}" />
+                    android:onClick="@{()->click.inforManage()}" />
 
                 <Button
                     android:id="@+id/btn_sblb"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/dp_136"
+                    android:layout_height="@dimen/dp_72"
                     android:layout_alignParentEnd="true"
                     android:background="@mipmap/btn_bxgl"
-                    android:onClick="@{()->click.repairManage}" />
-
-                <!--                <Button-->
-                <!--                    android:id="@+id/btn_gdcx"-->
-                <!--                    android:layout_width="wrap_content"-->
-                <!--                    android:layout_height="wrap_content"-->
-                <!--                    android:layout_below="@id/btn_xxgl"-->
-                <!--                    android:layout_marginTop="@dimen/dp_30"-->
-                <!--                    android:onClick="@{()->click.workOrderQuery}"-->
-                <!--                    android:background="@mipmap/btn_gdcx" />-->
-
-                <!--                <Button-->
-                <!--                    android:layout_width="wrap_content"-->
-                <!--                    android:layout_height="wrap_content"-->
-                <!--                    android:layout_below="@id/btn_sblb"-->
-                <!--                    android:layout_alignParentEnd="true"-->
-                <!--                    android:onClick="@{()->click.repairEntry}"-->
-                <!--                    android:layout_marginTop="@dimen/dp_30"-->
-                <!--                    android:background="@mipmap/btn_bxlr" />-->
+                    android:onClick="@{()->click.repairManage()}" />
             </RelativeLayout>
         </LinearLayout>
     </LinearLayout>

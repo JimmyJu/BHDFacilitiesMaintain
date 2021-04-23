@@ -30,18 +30,28 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
 
         }
 
-        //工单查询
-        fun workOrderQuery() {
+        //维护工单
+        fun maintenanceWorkOrder() {
+
+        }
+
+        //维护工单查询
+        fun maintenanceWorkOrderQuery() {
+
+        }
+
+        //报修工单
+        fun repairWorkOrder() {
+
+        }
+
+        //报修工单查询
+        fun repairWorkOrderQuery() {
 
         }
 
         //报修录入
         fun repairEntry() {
-
-        }
-
-        //维护保养
-        fun maintenance() {
 
         }
     }
