@@ -1,8 +1,10 @@
 package com.bhd.facilitiesmaintain.ui.activity
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import com.bhd.facilitiesmaintain.R
@@ -24,7 +26,6 @@ class LoginActivity : BaseActivity<LoginRegisterViewModel, ActivityLoginBinding>
         addLoadingObserve(requestLoginRegisterViewModel)
         mDatabind.viewmodel = mViewModel
         mDatabind.click = ProxyClick()
-
         requestLoginRegisterViewModel.loginResult.observe(this, Observer {
             dismissLoading()
             Log.e("TAG", "initView: " + it[0].Email)

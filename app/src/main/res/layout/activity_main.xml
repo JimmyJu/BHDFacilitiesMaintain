@@ -15,6 +15,7 @@
     </data>
 
     <LinearLayout
+        android:fitsSystemWindows="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#FFFFFF"
@@ -76,7 +77,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="@dimen/dp_16"
-                android:layout_marginBottom="@dimen/dp_83"
+                android:layout_marginBottom="@dimen/dp_53"
                 android:background="@color/white">
 
                 <TextView

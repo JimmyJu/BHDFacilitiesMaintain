@@ -1,6 +1,7 @@
 package com.bhd.facilitiesmaintain.ext
 
 import android.app.Activity
+import android.graphics.Color
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.widget.Toolbar
 import com.bhd.baselibrary.base.appContext
@@ -18,10 +19,11 @@ import com.bhd.facilitiesmaintain.util.SettingUtil
  */
 fun Toolbar.initClose(
     titleStr: String = "",
-    backImg: Int = R.drawable.ic_back,
+    backImg: Int = R.drawable.previous_icon,
     onBack: (toolbar: Toolbar) -> Unit
 ): Toolbar {
     setBackgroundColor(SettingUtil.getColor(appContext))
+    setTitleTextColor(Color.BLACK)
     title = titleStr.toHtml()
     setNavigationIcon(backImg)
     setNavigationOnClickListener { onBack.invoke(this) }
