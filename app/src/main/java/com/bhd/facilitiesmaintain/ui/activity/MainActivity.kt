@@ -1,11 +1,10 @@
 package com.bhd.facilitiesmaintain.ui.activity
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.Gravity
 import android.view.View
-import android.view.WindowManager
-
 import com.bhd.facilitiesmaintain.R
 import com.bhd.facilitiesmaintain.databinding.ActivityMainBinding
 
@@ -22,8 +21,10 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
     override fun initView(savedInstanceState: Bundle?) {
         mDatabind.viewmodel = mViewModel
         mDatabind.click = ProxyClick()
+        //把状态栏显示内容变成黑色
+        window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
 
-        var count = Badgetor.getInstance().badgeNumber
+//        var count = Badgetor.getInstance().badgeNumber
 
         Badgetor.getInstance().setBadgeTextSize(14F, true)
         Badgetor.getInstance().setBadgeTextColor(Color.parseColor("#ffffff"))
@@ -46,12 +47,12 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
 
         //信息管理
         fun inforManage() {
-
+            startActivity(Intent(this@MainActivity,InforManageActivity::class.java))
         }
 
         //设备列表
         fun deviceList() {
-
+            startActivity(Intent(this@MainActivity,DeviceListActivity::class.java))
         }
 
         //维护工单

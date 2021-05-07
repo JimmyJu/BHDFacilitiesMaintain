@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.bhd.facilitiesmaintain.viewmodel.state.InfoEditorViewModel" />
+
+        <variable
+            name="click"
+            type="com.bhd.facilitiesmaintain.ui.fragmeng.InfoeEditorFragment.ProxyClick" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F2F2F2"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_60">
+
+            <TextView
+                android:id="@+id/tv_userName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dp_15"
+                android:text="@={vm.userName}"
+                android:textColor="#333333"
+                android:textSize="@dimen/sp_20"
+                tools:text="欢迎：李先生" />
+
+            <Button
+                android:id="@+id/btn_signout"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_40"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:background="@drawable/shape_signout_btn"
+                android:onClick="@{()-> click.signout()}"
+                android:text="退出账号"
+                android:textColor="#F63C56"
+                android:textSize="@dimen/dp_16" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:background="#FFFFFF"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:layout_marginBottom="7dp"
+                android:text="选择单位:"
+                android:textColor="#777777"
+                android:textSize="@dimen/sp_12" />
+
+            <Spinner
+                android:id="@+id/planets_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_44"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:background="#F2F2F2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:layout_marginBottom="7dp"
+                android:text="职位:"
+                android:textColor="#777777"
+                android:textSize="@dimen/sp_12" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_44"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:background="#F2F2F2"
+                android:hint="请填写职位信息"
+                android:paddingStart="@dimen/dp_16"
+                android:textColor="@color/Black"
+                android:textColorHint="#AAAAAA"
+                android:textSize="@dimen/sp_15" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:layout_marginBottom="7dp"
+                android:text="姓名:"
+                android:textColor="#777777"
+                android:textSize="@dimen/sp_12" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_44"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:background="#F2F2F2"
+                android:hint="请输入姓名"
+                android:inputType="text"
+                android:lines="1"
+                android:paddingStart="@dimen/dp_16"
+                android:textColor="@color/Black"
+                android:textColorHint="#AAAAAA"
+                android:text="@={vm.userName}"
+                android:textSize="@dimen/sp_15" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:layout_marginBottom="7dp"
+                android:text="性别:"
+                android:textColor="#777777"
+                android:textSize="@dimen/sp_12" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/boy"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_44"
+                    android:layout_weight="1"
+                    android:background="@drawable/state_textview"
+                    android:enabled="false"
+                    android:gravity="center"
+                    android:text="男"
+                    android:textColor="#777777"
+                    />
+
+                <TextView
+                    android:id="@+id/girl"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_44"
+                    android:layout_weight="1"
+                    android:background="@drawable/state_textview"
+                    android:gravity="center"
+                    android:text="女"
+                    android:textColor="#777777" />
+            </LinearLayout>
+        </LinearLayout>
+        <Button
+            android:id="@+id/register"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/shape_common_btn1"
+            android:gravity="center"
+            android:onClick="@{()->click.save()}"
+            android:text="保存"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
+
+    </LinearLayout>
+</layout>

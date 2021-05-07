@@ -12,6 +12,7 @@
     <color name="colorPrimary">#2196F3</color>
     <color name="colorGray">#333</color>
     <color name="colorAccent">#2196F3</color>
+    <color name="colorbotton">#0257A0</color>
 
     <color name="trans">#00000000</color>
 </resources>

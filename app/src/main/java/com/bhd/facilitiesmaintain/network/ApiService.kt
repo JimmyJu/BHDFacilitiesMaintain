@@ -16,7 +16,10 @@ import retrofit2.http.Query
 interface ApiService {
 
     companion object {
-        const val SERVER_URL = "https://fms.yinxinht.com/"
+        //正式
+//        const val SERVER_URL = "https://fms.yinxinht.com/"
+        //测试
+        const val SERVER_URL = "http://172.16.1.8:82/"
     }
 
     /**

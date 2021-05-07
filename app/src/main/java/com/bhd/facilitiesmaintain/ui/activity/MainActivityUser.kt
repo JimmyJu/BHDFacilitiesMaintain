@@ -14,6 +14,7 @@ class MainActivityUser : BaseActivity<MainViewModel, ActivityMainUserBinding>() 
     }
 
     override fun initView(savedInstanceState: Bundle?) {
+        window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
         mDatabind.viewmodel = mViewModel
         mDatabind.click = ProxyClick()
     }

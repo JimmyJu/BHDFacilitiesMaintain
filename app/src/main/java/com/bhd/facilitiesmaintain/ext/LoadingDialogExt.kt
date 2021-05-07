@@ -17,7 +17,6 @@ import com.bhd.facilitiesmaintain.R
  * @author : hgj
  * @date : 2020/6/28
  */
-
 //loading框
 private var loadingDialog: MaterialDialog? = null
 

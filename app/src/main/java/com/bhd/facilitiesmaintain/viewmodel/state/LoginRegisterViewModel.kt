@@ -18,6 +18,11 @@ class LoginRegisterViewModel : BaseViewModel() {
     //密码(登录注册界面)
     var edLoginPassword = StringObservableField()
 
+    //密码(登录注册界面)
+    var password1 = StringObservableField()
+
+    var password2 = StringObservableField()
+
 
     fun loginBtnEnabled(): Boolean {
         return true

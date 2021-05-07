@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/TranslucentTheme">
-        <activity android:name=".ui.activity.InforManageActivity"></activity>
+        <activity android:name=".ui.activity.DeviceListActivity"></activity>
+        <activity android:name=".ui.activity.InforManageActivity" />
         <activity android:name=".ui.activity.MainActivityUser" />
         <activity android:name=".ui.activity.RegisterActivity" />
         <activity android:name=".ui.activity.MainActivity" />

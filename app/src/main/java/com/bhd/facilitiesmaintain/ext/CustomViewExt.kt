@@ -19,11 +19,11 @@ import com.bhd.facilitiesmaintain.util.SettingUtil
  */
 fun Toolbar.initClose(
     titleStr: String = "",
-    backImg: Int = R.drawable.previous_icon,
+    backImg: Int = R.mipmap.back,
     onBack: (toolbar: Toolbar) -> Unit
 ): Toolbar {
-    setBackgroundColor(SettingUtil.getColor(appContext))
-    setTitleTextColor(Color.BLACK)
+    setBackgroundColor(Color.parseColor("#FFFFFF"))
+    setTitleTextColor(Color.parseColor("#333333"))
     title = titleStr.toHtml()
     setNavigationIcon(backImg)
     setNavigationOnClickListener { onBack.invoke(this) }

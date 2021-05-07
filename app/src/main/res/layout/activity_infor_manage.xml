@@ -4,24 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="vm"
+            type="com.bhd.facilitiesmaintain.viewmodel.state.InfoManageViewModel" />
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".ui.activity.InforManageActivity">
+        android:background="#FFFFFF"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <include layout="@layout/include_toolbar" />
+
+        <com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
+            android:id="@+id/mainBottom"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_44">
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:itemTextColor="@color/bottom_selector"
+            app:menu="@menu/menu_navigation" />
 
-            <ImageView
-                android:layout_width="@dimen/dp_12"
-                android:layout_height="@dimen/dp_22" />
-
-        </LinearLayout>
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/mainViewpager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
     </LinearLayout>
 
 </layout>
