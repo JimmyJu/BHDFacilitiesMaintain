@@ -31,7 +31,6 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_60">
-
                 <TextView
                     android:id="@+id/tv_userName"
                     android:layout_width="wrap_content"
@@ -57,109 +56,131 @@
                     android:textSize="@dimen/dp_16" />
             </RelativeLayout>
 
-            <LinearLayout
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="#FFFFFF"
-                android:layout_marginStart="@dimen/dp_16"
-                android:layout_marginTop="@dimen/dp_10"
-                android:layout_marginEnd="@dimen/dp_16"
+                android:layout_height="match_parent"
                 >
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/dp_16"
-                    android:layout_marginTop="@dimen/dp_10"
-                    android:layout_marginEnd="@dimen/dp_16"
-                    android:layout_marginBottom="7dp"
-                    android:text="场地名称:"
-                    android:textColor="#777777"
-                    android:textSize="@dimen/sp_12" />
-                <Spinner
-                    android:id="@+id/site_name_spinner"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/dp_44"
-                    android:layout_marginStart="@dimen/dp_16"
-                    android:layout_marginEnd="@dimen/dp_16"
-                    android:layout_marginBottom="@dimen/dp_10"
-                    android:background="#F2F2F2" />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/dp_16"
-                    android:layout_marginEnd="@dimen/dp_16"
-                    android:layout_marginBottom="7dp"
-                    android:text="当前状态:"
-                    android:textColor="#777777"
-                    android:textSize="@dimen/sp_12" />
-                <Spinner
-                    android:id="@+id/current_state_spinner"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/dp_44"
-                    android:layout_marginStart="@dimen/dp_16"
-                    android:layout_marginEnd="@dimen/dp_16"
-                    android:layout_marginBottom="@dimen/dp_10"
-                    android:background="#F2F2F2" />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/dp_16"
-                    android:layout_marginEnd="@dimen/dp_16"
-                    android:layout_marginBottom="7dp"
-                    android:text="设备类型:"
-                    android:textColor="#777777"
-                    android:textSize="@dimen/sp_12" />
-                <Spinner
-                    android:id="@+id/device_type_spinner"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/dp_44"
-                    android:layout_marginStart="@dimen/dp_16"
-                    android:layout_marginEnd="@dimen/dp_16"
-                    android:layout_marginBottom="@dimen/dp_10"
-                    android:background="#F2F2F2" />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/dp_16"
-                    android:layout_marginEnd="@dimen/dp_16"
-                    android:layout_marginBottom="7dp"
-                    android:text="设备名称:"
-                    android:textColor="#777777"
-                    android:textSize="@dimen/sp_12" />
+                    android:orientation="vertical"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="#FFFFFF"
+                        android:layout_marginStart="@dimen/dp_16"
+                        android:layout_marginEnd="@dimen/dp_16"
+                        >
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp_16"
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:layout_marginEnd="@dimen/dp_16"
+                            android:layout_marginBottom="7dp"
+                            android:text="场地名称:"
+                            android:textColor="#777777"
+                            android:textSize="@dimen/sp_12" />
+                        <org.angmarch.views.NiceSpinner
+                            android:id="@+id/site_name_spinner"
+                            android:layout_width="match_parent"
+                            android:hint="请选择场地"
+                            android:textColorHint="#AAAAAA"
+                            android:layout_height="@dimen/dp_44"
+                            android:layout_marginStart="@dimen/dp_16"
+                            android:layout_marginEnd="@dimen/dp_16"
+                            android:layout_marginBottom="@dimen/dp_10"
+                            app:textTint="@color/Black"
+                            app:arrowDrawable="@mipmap/drop_down"
+                            />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp_16"
+                            android:layout_marginEnd="@dimen/dp_16"
+                            android:layout_marginBottom="7dp"
+                            android:text="当前状态:"
+                            android:textColor="#777777"
+                            android:textSize="@dimen/sp_12" />
+                        <org.angmarch.views.NiceSpinner
+                            android:id="@+id/current_state_spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_44"
+                            android:layout_marginStart="@dimen/dp_16"
+                            android:layout_marginEnd="@dimen/dp_16"
+                            android:layout_marginBottom="@dimen/dp_10"
+                            app:textTint="@color/Black"
+                            app:arrowDrawable="@mipmap/drop_down"
+                            />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp_16"
+                            android:layout_marginEnd="@dimen/dp_16"
+                            android:layout_marginBottom="7dp"
+                            android:text="设备类型:"
+                            android:textColor="#777777"
+                            android:textSize="@dimen/sp_12" />
+                        <org.angmarch.views.NiceSpinner
+                            android:id="@+id/device_type_spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_44"
+                            android:layout_marginStart="@dimen/dp_16"
+                            android:layout_marginEnd="@dimen/dp_16"
+                            android:layout_marginBottom="@dimen/dp_10"
+                            android:hint="设备类型"
+                            android:textColorHint="#AAAAAA"
+                            app:textTint="@color/Black"
+                            app:arrowDrawable="@mipmap/drop_down"
+                            />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp_16"
+                            android:layout_marginEnd="@dimen/dp_16"
+                            android:layout_marginBottom="7dp"
+                            android:text="设备名称:"
+                            android:textColor="#777777"
+                            android:textSize="@dimen/sp_12" />
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/dp_44"
-                    android:layout_marginStart="@dimen/dp_16"
-                    android:layout_marginEnd="@dimen/dp_16"
-                    android:background="#F2F2F2"
-                    android:hint=""
-                    android:inputType="text"
-                    android:lines="1"
-                    android:paddingStart="@dimen/dp_16"
-                    android:textColor="@color/Black"
-                    android:textColorHint="#AAAAAA"
-                    android:textSize="@dimen/sp_15" />
-                <Button
-                    android:id="@+id/register"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:layout_gravity="bottom"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginStart="@dimen/dp_16"
-                    android:layout_marginEnd="@dimen/dp_16"
-                    android:layout_marginBottom="12dp"
-                    android:background="@drawable/shape_common_btn1"
-                    android:gravity="center"
-                    android:onClick="@{()->click.query()}"
-                    android:text="查询"
-                    android:textColor="@color/white"
-                    android:textSize="16dp" />
-
-
-            </LinearLayout>
-
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_44"
+                            android:layout_marginStart="@dimen/dp_16"
+                            android:layout_marginEnd="@dimen/dp_16"
+                            android:background="#F2F2F2"
+                            android:hint="填写设备名称"
+                            android:text="@={vm.devicesName}"
+                            android:inputType="text"
+                            android:lines="1"
+                            android:paddingStart="@dimen/dp_16"
+                            android:textColor="@color/Black"
+                            android:textColorHint="#AAAAAA"
+                            android:textSize="@dimen/sp_15" />
+                        <Button
+                            android:id="@+id/register"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:layout_gravity="bottom"
+                            android:layout_marginTop="30dp"
+                            android:layout_marginStart="@dimen/dp_16"
+                            android:layout_marginEnd="@dimen/dp_16"
+                            android:layout_marginBottom="12dp"
+                            android:background="@drawable/shape_common_btn1"
+                            android:gravity="center"
+                            android:onClick="@{()->click.query()}"
+                            android:text="查询"
+                            android:textColor="@color/white"
+                            android:textSize="16dp" />
+                    </LinearLayout>
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/view_pager"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+            </ScrollView>
         </LinearLayout>
 
     </LinearLayout>

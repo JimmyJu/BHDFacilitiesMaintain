@@ -1,12 +1,15 @@
 package com.bhd.facilitiesmaintain.ui.activity
 
+import android.animation.ValueAnimator
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.Gravity
 import android.view.View
+import android.view.animation.AccelerateInterpolator
 import com.bhd.facilitiesmaintain.R
 import com.bhd.facilitiesmaintain.databinding.ActivityMainBinding
+import com.bhd.facilitiesmaintain.ext.extraAnimClickListener
 
 import com.bhd.facilitiesmaintain.util.Badgetor
 import com.bhd.facilitiesmaintain.viewmodel.state.MainViewModel
@@ -23,7 +26,6 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
         mDatabind.click = ProxyClick()
         //把状态栏显示内容变成黑色
         window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
-
 //        var count = Badgetor.getInstance().badgeNumber
 
         Badgetor.getInstance().setBadgeTextSize(14F, true)
@@ -37,6 +39,17 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
         Badgetor.getInstance().setBadgeBackgroundColor(Color.parseColor("#ff0000"))
         Badgetor.getInstance().bindTarget(mDatabind.btnBxgd).setBadgeNumber(12)
         dragState()
+
+        mDatabind.btnWbgd.extraAnimClickListener(ValueAnimator.ofFloat(1.0f,1.15f).apply {
+            interpolator = AccelerateInterpolator()
+            duration = 100
+            addUpdateListener {
+                mDatabind.btnWbgd.scaleX = it.animatedValue as Float
+                mDatabind.btnWbgd.scaleY = it.animatedValue as Float
+            }
+        }){
+
+        }
 
     }
 
@@ -57,27 +70,27 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
 
         //维护工单
         fun maintenanceWorkOrder() {
-
+            startActivity(Intent(this@MainActivity,MaintenanceWorkOrderActivity::class.java))
         }
 
         //维护工单查询
         fun maintenanceWorkOrderQuery() {
-
+//            startActivity(Intent(this@MainActivity,MaintenanceWorkOrderQueryActivity::class.java))
         }
 
         //报修工单
         fun repairWorkOrder() {
-
+//            startActivity(Intent(this@MainActivity,RepairWorkOrderActivity::class.java))
         }
 
         //报修工单查询
         fun repairWorkOrderQuery() {
-
+//            startActivity(Intent(this@MainActivity,RepairWorkOrderQueryActivity::class.java))
         }
 
         //报修录入
         fun repairEntry() {
-
+//            startActivity(Intent(this@MainActivity,RepairEntryActivity::class.java))
         }
     }
 

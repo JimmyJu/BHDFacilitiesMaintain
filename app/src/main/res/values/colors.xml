@@ -15,4 +15,5 @@
     <color name="colorbotton">#0257A0</color>
 
     <color name="trans">#00000000</color>
+    <color name="windowBackground">#F5F5F5</color>
 </resources>

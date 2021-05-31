@@ -4,9 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="vm"
             type="com.bhd.facilitiesmaintain.viewmodel.state.InfoManageViewModel" />
+        <variable
+            name="click"
+            type="com.bhd.facilitiesmaintain.ui.activity.InforManageActivity.ProxyClick" />
     </data>
 
     <LinearLayout
@@ -18,19 +22,47 @@
 
         <include layout="@layout/include_toolbar" />
 
-        <com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
-            android:id="@+id/mainBottom"
+        <!--        <com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx-->
+        <!--            android:id="@+id/mainBottom"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:background="@color/white"-->
+        <!--            app:itemTextColor="@color/bottom_selector"-->
+        <!--            app:menu="@menu/menu_navigation" />-->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            app:itemTextColor="@color/bottom_selector"
-            app:menu="@menu/menu_navigation" />
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_info_edit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="@{()->click.infoEdit()}"
+                android:background="@drawable/shape_info_manage_btn"
+                android:text="信息编辑"
+                android:textColor="@drawable/textcolor_bottom_main"
+                android:textSize="@dimen/sp_16" />
+
+            <Button
+                android:id="@+id/btn_change_pws"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="@{()->click.changePws()}"
+                android:background="@drawable/shape_info_manage_btn"
+                android:text="登录密码修改"
+
+                android:textColor="@drawable/textcolor_bottom_main"
+                android:textSize="@dimen/sp_16" />
+        </LinearLayout>
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/mainViewpager"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_height="match_parent"
+             />
     </LinearLayout>
 
 </layout>

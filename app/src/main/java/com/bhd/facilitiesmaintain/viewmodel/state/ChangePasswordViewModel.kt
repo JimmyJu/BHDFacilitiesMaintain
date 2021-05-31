@@ -5,4 +5,7 @@ import com.bhd.baselibrary.callbak.StringObservableField
 
 class ChangePasswordViewModel : BaseViewModel() {
     var userName = StringObservableField()
+    var newPswAgain = StringObservableField()
+    var newPsw = StringObservableField()
+    var originalPsw = StringObservableField()
 }

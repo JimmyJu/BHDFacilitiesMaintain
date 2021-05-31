@@ -1,11 +1,22 @@
 package com.bhd.facilitiesmaintain.ext
 
+import android.animation.ValueAnimator
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.graphics.Color
+import android.view.MotionEvent
+import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.widget.Toolbar
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
+import androidx.viewpager2.adapter.FragmentStateAdapter
+import androidx.viewpager2.widget.ViewPager2
 import com.bhd.baselibrary.base.appContext
 import com.bhd.facilitiesmaintain.R
+import com.bhd.facilitiesmaintain.ui.activity.InforManageActivity
+import com.bhd.facilitiesmaintain.ui.fragmeng.ChangePasswordFragment
+import com.bhd.facilitiesmaintain.ui.fragmeng.InfoeEditorFragment
 import com.bhd.facilitiesmaintain.util.SettingUtil
 
 /**
@@ -46,4 +57,46 @@ fun hideSoftKeyboard(activity: Activity?) {
             )
         }
     }
+}
+
+/**
+ * //初始化viewpager2
+ */
+fun ViewPager2.initMain(activity: FragmentActivity): ViewPager2 {
+    //是否可滑动
+    this.isUserInputEnabled = false
+    this.offscreenPageLimit = 2
+    //设置适配器
+    adapter = object : FragmentStateAdapter(activity) {
+        override fun createFragment(position: Int): Fragment {
+            when (position) {
+                0 -> {
+                    return InfoeEditorFragment()
+                }
+                1 -> {
+                    return ChangePasswordFragment()
+                }
+                else -> {
+                    return InfoeEditorFragment()
+                }
+            }
+        }
+        override fun getItemCount() = 2
+    }
+    return this
+}
+
+/**
+ * 扩展函数接收一个动画和一个点击响应逻辑（用lambda表示）
+ */
+@SuppressLint("ClickableViewAccessibility")
+fun View.extraAnimClickListener(animator: ValueAnimator, action: (View) -> Unit) {
+    setOnTouchListener { v, event ->
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> animator.start()
+            MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> animator.reverse()
+        }
+        false
+    }
+    setOnClickListener { action(this) }
 }

@@ -2,6 +2,7 @@ package com.bhd.facilitiesmaintain.ext
 
 
 import android.text.TextUtils
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.afollestad.materialdialogs.MaterialDialog
@@ -10,6 +11,9 @@ import com.afollestad.materialdialogs.actions.getActionButton
 import com.afollestad.materialdialogs.lifecycle.lifecycleOwner
 
 import com.bhd.facilitiesmaintain.util.SettingUtil
+import com.blankj.utilcode.util.StringUtils
+import org.json.JSONException
+import org.json.JSONObject
 
 import java.io.BufferedReader
 import java.io.FileReader
@@ -143,5 +147,45 @@ inline fun <reified T> List<T>?.getChild(position: Int): T? {
             this[position]
         }
     }
+}
+
+/**
+ * json字符串转 Map
+ */
+fun getMap(jsonString: String?): HashMap<String, Any>? {
+    val jsonObject: JSONObject
+    try {
+        jsonObject = JSONObject(jsonString)
+        val keyIter: Iterator<String> = jsonObject.keys()
+        var key: String
+        var value: Any
+        var valueMap = HashMap<String, Any>()
+        while (keyIter.hasNext()) {
+            key = keyIter.next()
+            value = jsonObject[key] as Any
+            valueMap[key] = value
+        }
+        return valueMap
+    } catch (e: JSONException) {
+        e.printStackTrace()
+    }
+    return null
+}
+
+fun getJSONType(str: String): Boolean {
+    var str = str
+    var result = false
+    if (!StringUtils.isEmpty(str)) {
+        str = str.trim { it <= ' ' }
+        if (str.startsWith("{") && str.endsWith("}")) {
+            result = true
+        } else if (str.startsWith("[") && str.endsWith("]")) {
+            result = true
+        }
+    }
+    return result
+}
+
+fun main(args: Array<String>) {
 }
 

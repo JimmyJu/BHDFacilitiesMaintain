@@ -5,4 +5,5 @@ import com.bhd.baselibrary.callbak.StringObservableField
 
 class DeviceListViewModel : BaseViewModel() {
     var userName = StringObservableField()
+    var devicesName = StringObservableField()
 }

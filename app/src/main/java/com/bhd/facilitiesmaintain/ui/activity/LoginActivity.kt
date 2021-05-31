@@ -8,11 +8,15 @@ import android.view.View
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import com.bhd.facilitiesmaintain.R
+import com.bhd.facilitiesmaintain.data.UserInfo
 import com.bhd.facilitiesmaintain.databinding.ActivityLoginBinding
+import com.bhd.facilitiesmaintain.ext.getJSONType
 import com.bhd.facilitiesmaintain.ext.hideSoftKeyboard
+import com.bhd.facilitiesmaintain.ext.showMessage
 import com.bhd.facilitiesmaintain.viewmodel.request.RequestLoginRegisterViewModel
 import com.bhd.facilitiesmaintain.viewmodel.state.LoginRegisterViewModel
 import com.blankj.utilcode.util.ToastUtils
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_login.*
 
 
@@ -28,9 +32,21 @@ class LoginActivity : BaseActivity<LoginRegisterViewModel, ActivityLoginBinding>
         mDatabind.click = ProxyClick()
         requestLoginRegisterViewModel.loginResult.observe(this, Observer {
             dismissLoading()
-            Log.e("TAG", "initView: " + it[0].Email)
-            val realName = it[0].RealName
-            val userType = it[0].UserType
+
+            if (getJSONType(it)) {
+                val fromJson = Gson().fromJson(it, UserInfo::class.java)
+
+//                startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+            } else {
+                showMessage(it)
+            }
+
+
+//
+//            Log.e("TAG", "initView: " + it[0].Email)
+//
+//            val realName = it[0].RealName
+//            val userType = it[0].UserType
         })
 
     }
@@ -42,11 +58,11 @@ class LoginActivity : BaseActivity<LoginRegisterViewModel, ActivityLoginBinding>
                 mViewModel.edLoginPassword.get().isEmpty() -> ToastUtils.showShort("密码不能为空")
                 else -> {
                     startActivity(Intent(this@LoginActivity, MainActivity::class.java))
-                    /*showLoading("请求网络中")
+                    showLoading("请求网络中")
                     requestLoginRegisterViewModel.loginRequest(
                         mViewModel.edLoginMobile.get(),
                         mViewModel.edLoginPassword.get()
-                    )*/
+                    )
                 }
             }
         }
